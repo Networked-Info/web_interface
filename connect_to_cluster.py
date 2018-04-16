@@ -50,7 +50,7 @@ def ssh_connect_command_line(command, user, host, password):
 
 
 def run():
-	server = "" #the server host name for one in our group
+	server = "" #the server host name for one in our group, like cs.brandeis.edu
 
 	query = sys.argv[1] #the bunch of words we are searching
 
@@ -60,4 +60,21 @@ def run():
 	#we can print out the query if it works
 	print(query)
 
-	
+	#then generate the command, i think it's path + which file to run
+	command = ""
+
+	#then start
+	start = ssh_connect_command_line(user, server, password, command)
+	start.expect(pexpect.EOF, timeout = 600)
+	output = start.before
+
+	print(output) # we can see what results is generated here
+
+	file = open('output.txt', 'w')
+	file.write(output)
+	file.close()
+
+
+#then run
+if __name__ = "__main__":
+	run()
