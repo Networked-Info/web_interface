@@ -28,7 +28,7 @@ function my_exec($cmd, $input='')
   }else{
     
     echo $enter;
-    exec("/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7  server_connect.py"." ".$enter);
+    exec("/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7  connect_to_server.py"." ".$enter);
 require_once(dirname(__FILE__)."/ContentExtractor.php");
   
 $path="";
